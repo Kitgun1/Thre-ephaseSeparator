@@ -264,7 +264,7 @@ MonoBehaviour:
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
-  m_ChildControlHeight: 0
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -304,8 +304,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 25, y: 25}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 25, y: 0}
+  m_Pivot: {x: 5, y: 1}
 --- !u!222 &3368648931296515514
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 8a7a79fe8110bb74e999bb0b87355829, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
-  m_ChildControlHeight: 0
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -636,11 +636,11 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_Spacing: 15
   m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
 --- !u!114 &5120593676285029131
 MonoBehaviour:
@@ -673,5 +673,5 @@ MonoBehaviour:
   _description: {fileID: 5568122325776828735}
   _taskParent: {fileID: 6117954852506077098}
   _taskTemplate: {fileID: 2200970474075559394, guid: 3941654cc8446b64a871485874d7296c, type: 3}
-  _spriteComplete: {fileID: 0}
-  _spriteUncomplete: {fileID: 0}
+  _spriteComplete: {fileID: 21300000, guid: 28718f64b6c5c86419ec7552fd0da6dc, type: 3}
+  _spriteUncomplete: {fileID: 21300000, guid: 13ad7dba71343204f94c25dfb2ae22de, type: 3}

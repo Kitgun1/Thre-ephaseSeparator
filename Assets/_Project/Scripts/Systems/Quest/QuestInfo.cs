@@ -7,14 +7,11 @@ using UnityEngine;
 namespace _Project.Scripts.Systems.Quest
 {
     [Serializable]
-    public struct TaskInfo
+    public struct QuestInfo
     {
         public string Name;
         public string Description;
-
-        [RequireInterface(typeof(ITaskQuest)), SerializeField]
-        public GameObject TaskObjects;
-
-        public ITaskQuest Task => TaskObjects.GetComponent<ITaskQuest>();
+        public List<TaskInfo> Tasks;
+        public IQuest Quest;
     }
 }
