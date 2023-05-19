@@ -4,7 +4,7 @@ using KimicuUtilities.Enums;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace KimicuUtilities
+namespace KimicuUtilities.Math
 {
     public static class KiMath
     {

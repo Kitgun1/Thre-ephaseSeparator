@@ -32,7 +32,7 @@ namespace _Project.Scripts.Systems.UI
             if (value)
             {
                 _stateImage.sprite = _spriteComplete;
-                _stateImage.color = new Color(0.5f, 1f, 0.25f);
+                _stateImage.color = new Color(0.45f, 0.82f, 0.26f);
             }
             else
             {
@@ -47,8 +47,9 @@ namespace _Project.Scripts.Systems.UI
         {
             UITask task = Instantiate(_taskTemplate, _taskParent);
             task.SetVisual(name, description);
-            iTask.OnComplete += _ => task.SetState(true);
-            iTask.OnUncomplete += _ => task.SetState(false);
+            iTask.OnComplete += iTaskQuest => task.SetState(iTaskQuest != null);
+            iTask.OnUncomplete += iTaskQuest => task.SetState(iTaskQuest == null);
+
             return this;
         }
     }

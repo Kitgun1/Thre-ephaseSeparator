@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-// ReSharper disable CheckNamespace
+using UnityEngine;
 
-namespace KimicuUtilities
+namespace KimicuUtilities.Collections
 {
     public static class KiCollection
     {
@@ -28,7 +28,7 @@ namespace KimicuUtilities
         public static List<List<T>> SplitList<T>(List<T> list, int percentRatio)
         {
             int count = list.Count;
-            int middleIndex = (int)Math.Floor(count * percentRatio / 100.0);
+            int middleIndex = (int)Mathf.Floor((float)(count * percentRatio / 100d));
             List<T> firstList = list.GetRange(0, middleIndex);
             List<T> secondList = list.GetRange(middleIndex, count - middleIndex);
             List<List<T>> result = new List<List<T>> { firstList, secondList };
@@ -41,7 +41,10 @@ namespace KimicuUtilities
 
             double sumPercentages = percentages.Sum();
 
-            if (sumPercentages > 100 || sumPercentages < 0) throw new ArgumentException("Sum of percentages should be in range (0, 100)");
+            if (sumPercentages is > 100 or < 0)
+            {
+                throw new ArgumentException("Sum of percentages should be in range (0, 100)");
+            }
 
             List<List<T>> result = new List<List<T>>();
 
@@ -72,7 +75,7 @@ namespace KimicuUtilities
 
             for (int i = 0; i < count; i++)
             {
-                int start = i * size + Math.Min(i, remainder);
+                int start = i * size + Mathf.Min(i, remainder);
                 int end;
                 if (i < remainder) end = start + size + (1);
                 else end = start + size + (0);

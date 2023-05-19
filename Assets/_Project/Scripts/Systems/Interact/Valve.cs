@@ -20,17 +20,20 @@ namespace _Project.Scripts.Systems.Interact
 
         public override void Switch()
         {
+            if (!_available) return;
             Rotate(State ? _axis * -1 : _axis, base.Switch);
         }
 
         public override void TurnOff()
         {
+            if (!_available) return;
             if (!State) return;
             Rotate(_axis, base.TurnOff);
         }
 
         public override void TurnOn()
         {
+            if (!_available) return;
             if (State) return;
             Rotate(_axis * -1, base.TurnOn);
         }
@@ -44,8 +47,8 @@ namespace _Project.Scripts.Systems.Interact
                 .OnStart(() => _available = false)
                 .OnComplete(() =>
                 {
-                    callback?.Invoke();
                     _available = true;
+                    callback?.Invoke();
                 });
         }
     }

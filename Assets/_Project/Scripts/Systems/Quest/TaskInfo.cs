@@ -11,6 +11,7 @@ namespace _Project.Scripts.Systems.Quest
     {
         public string Name;
         public string Description;
+        public bool IsRequiredClose;
 
         [RequireInterface(typeof(ITaskQuest)), SerializeField]
         public GameObject TaskObjects;

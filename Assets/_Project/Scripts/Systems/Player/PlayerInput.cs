@@ -15,7 +15,7 @@ namespace _Project.Scripts.Systems.Player
         private PlayerScaling _scaling;
         private PlayerRotate _rotate;
         private PlayerInteracter _playerInteracter;
-        private UIWindows _ui;
+        private UITipDisplay _ui;
 
         private Camera _camera;
 
@@ -30,7 +30,7 @@ namespace _Project.Scripts.Systems.Player
             _movement = GetComponent<PlayerMovement>();
             _scaling = GetComponent<PlayerScaling>();
             _rotate = GetComponent<PlayerRotate>();
-            _ui = FindObjectOfType<UIWindows>();
+            _ui = FindObjectOfType<UITipDisplay>();
             _input = new Input();
         }
 

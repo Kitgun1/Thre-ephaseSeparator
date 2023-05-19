@@ -27,7 +27,7 @@ namespace _Project.Scripts.Systems.UI
             if (value)
             {
                 _stateImage.sprite = _spriteComplete;
-                _stateImage.color = new Color(0.5f, 1f, 0.25f);
+                _stateImage.color = new Color(0.45f, 0.82f, 0.26f);
             }
             else
             {

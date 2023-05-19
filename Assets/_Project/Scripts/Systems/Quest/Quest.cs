@@ -11,14 +11,21 @@ namespace _Project.Scripts.Systems.Quest
         private readonly List<ITaskQuest> _taskCompleted = new List<ITaskQuest>(16);
 
         public event Action<IQuest> OnCompleteAll;
+        public event Action<IQuest> OnComplete;
         public event Action<IQuest> OnUncomplete;
 
         private bool IsAllCompleted => _taskCompleted.Count == _questInfo.Tasks.Count;
         public QuestInfo QuestInfo => _questInfo;
 
+        private void Awake()
+        {
+            _questInfo.Quest = this;
+        }
+
         public void InitListener()
         {
             _questInfo.Quest = this;
+            _taskCompleted.Clear();
             foreach (TaskInfo taskInfo in _questInfo.Tasks)
             {
                 taskInfo.Task.OnComplete += OnCompleted;
@@ -29,12 +36,13 @@ namespace _Project.Scripts.Systems.Quest
         private void OnCompleted(ITaskQuest quest)
         {
             _taskCompleted.Add(quest);
+            OnComplete?.Invoke(this);
             if (IsAllCompleted)
             {
                 OnCompleteAll?.Invoke(this);
             }
 
-            quest.OnComplete -= OnCompleted;
+            //quest.OnComplete -= OnCompleted;
         }
 
         private void OnUncompleted(ITaskQuest quest)
@@ -46,7 +54,7 @@ namespace _Project.Scripts.Systems.Quest
 
             _taskCompleted.Remove(quest);
 
-            quest.OnUncomplete -= OnUncompleted;
+            //quest.OnUncomplete -= OnUncompleted;
         }
     }
 }

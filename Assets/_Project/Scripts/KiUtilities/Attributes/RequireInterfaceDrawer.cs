@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace KimicuUtilities.Attributes
 {
+#if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(RequireInterface))]
     public class RequireInterfaceDrawer : PropertyDrawer
     {
@@ -52,4 +53,5 @@ namespace KimicuUtilities.Attributes
             Debug.LogError("ScriptableObject must implement " + targetType + " interface");
         }
     }
+#endif
 }

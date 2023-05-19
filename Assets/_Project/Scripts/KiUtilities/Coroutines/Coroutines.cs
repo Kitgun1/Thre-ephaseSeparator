@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-// ReSharper disable CheckNamespace
 
 namespace KimicuUtilities.Coroutines
 {

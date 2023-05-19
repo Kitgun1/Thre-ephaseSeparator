@@ -1,27 +1,58 @@
 ﻿using System;
+using System.Collections.Generic;
+using _Project.Scripts.Systems.UI.Structures;
 using UnityEngine;
 
 namespace _Project.Scripts.Systems.UI
 {
     public class UIWindows : MonoBehaviour
     {
-        [SerializeField] private GameObject _tipsParent;
+        [SerializeField] private List<Window> _windows = new List<Window>();
 
-        public void SwitchTip(UIItem item)
+        private void Start()
         {
-            switch (item)
+            OpenWindowAndCloseOther("Menu");
+        }
+
+        public void OpenWindow(string name)
+        {
+            SwitchWindow(name, true);
+        }
+
+        public void OpenAllWindow()
+        {
+            SwitchWindow("all", true);
+        }
+
+        public void OpenWindowAndCloseOther(string name)
+        {
+            foreach (Window window in _windows)
             {
-                case UIItem.Tip:
-                    _tipsParent.SetActive(!_tipsParent.activeSelf);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(item), item, null);
+                window.Parent.SetActive(window.Name == name);
             }
         }
-    }
 
-    public enum UIItem
-    {
-        Tip
+        public void CloseWindow(string name)
+        {
+            SwitchWindow(name, false);
+        }
+
+        public void CloseAllWindow()
+        {
+            SwitchWindow("all", false);
+        }
+
+        private void SwitchWindow(string name, bool value)
+        {
+            foreach (Window window in _windows)
+            {
+                if (window.Name.ToLower() != name.ToLower() && window.Name.ToLower() != "all") continue;
+                window.Parent.SetActive(value);
+                if (window.Name.ToLower() != "all")
+                {
+                    break;
+                }
+            }
+        }
     }
 }

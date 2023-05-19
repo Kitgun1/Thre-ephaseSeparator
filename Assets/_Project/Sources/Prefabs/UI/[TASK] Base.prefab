@@ -392,6 +392,7 @@ GameObject:
   - component: {fileID: 3340795315647794810}
   - component: {fileID: 8002221929460814650}
   - component: {fileID: 2200970474075559394}
+  - component: {fileID: 68457953370698771}
   m_Layer: 0
   m_Name: '[TASK] Base'
   m_TagString: Untagged
@@ -478,6 +479,27 @@ MonoBehaviour:
   _description: {fileID: 1104439279120179621}
   _spriteComplete: {fileID: 21300000, guid: 28718f64b6c5c86419ec7552fd0da6dc, type: 3}
   _spriteUncomplete: {fileID: 21300000, guid: 13ad7dba71343204f94c25dfb2ae22de, type: 3}
+--- !u!95 &68457953370698771
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3251084171202647451}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2928c713436f9224e9d69fffd47a0136, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8244016408713806947
 GameObject:
   m_ObjectHideFlags: 0
